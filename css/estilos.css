@@ -102,22 +102,15 @@ input[type="text"] {
   margin-bottom: 10px;
 }
 /*----------------------------------------------------------*/
-.form-check-input {
-  accent-color: green !important;
+.radioFiltro:checked {
+  border-color: black;
+  background-color: #a0a0a0;
 }
 
-.radioFiltro {
-  accent-color: green !important;
+.radioFiltro:hover{
+  border-color: black;
+  background-color: #bdbdbd;
 }
-
-input[type="radio"] {
-  accent-color: green !important;
-}
-
-#apto {
-  accent-color: green !important;
-}
-
 /*--------------------------------------------------------------*/
 
 button {
