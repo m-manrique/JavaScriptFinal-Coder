@@ -7,29 +7,17 @@ const mensajeMostrado = localStorage.getItem("mensajeMostrado");
 // Obtener el estado del mensaje de bienvenida desde localStorage
 const mensajeBienvenida = localStorage.getItem("mensajeBienvenida");
 
-// Verificar si el mensaje de bienvenida ya se ha mostrado
-if (!mensajeBienvenida) {
+if (mensajeBienvenida === null || mensajeBienvenida === undefined) {
     // Mostrar el mensaje de bienvenida
     Swal.fire("Trebol Apartamentos le da la Bienvenida!");
-
-    // Establecer el estado en localStorage para indicar que el mensaje de bienvenida se ha mostrado
+    // Establecer el estado en localStorage
     localStorage.setItem("mensajeBienvenida", "true");
-}
-
-// Verificar si el mensaje ya se ha mostrado durante la sesión actual
-if (!mensajeSesion) {
-    mensaje = "Bienvenido Nuevamente a Trebol Apartamentos!"
-    // Mostrar el mensaje
-    //const mensaje = [{ mj: "Bienvenido Nuevamente a Trebol Apartamentos!" }];
-    Swal.fire(mensaje);
-
-    // Establecer el estado en sessionStorage para indicar que el mensaje se ha mostrado durante la sesión actual
+} else if (!mensajeSesion) {
+    // Mostrar el mensaje de bienvenida durante la sesión actual
+    Swal.fire("Bienvenido Nuevamente a Trebol Apartamentos!");
+    // Establecer el estado en sessionStorage
     sessionStorage.setItem("mensajeSesion", "true");
-}
-
-// Verificar si el mensaje ya se ha mostrado en alguna sesión anterior
-if (!mensajeMostrado) {
-    // Establecer el estado en localStorage para indicar que el mensaje se ha mostrado en alguna sesión anterior
+} else if (!mensajeMostrado) {
+    // Establecer el estado en localStorage
     localStorage.setItem("mensajeMostrado", "true");
 }
-
